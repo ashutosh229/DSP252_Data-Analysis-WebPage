@@ -371,7 +371,7 @@ export default function Home() {
             {/* Section Heading */}
             <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-primary">
               <Lightbulb className="w-8 h-8 text-yellow-500" />
-              Conclusions are bad
+              Conclusions and Impacts
             </h2>
 
             {/* Main Card */}
