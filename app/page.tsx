@@ -16,15 +16,38 @@ import {
   Users,
   BarChart4,
   LineChart as LineChart3,
+  Activity,
+  Rocket,
+  ChevronRight,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Footer from "../components/defined/Footer";
 
 export default function Home() {
+  const futureApplications = [
+    {
+      text: "AI-driven predictions for market trends",
+      icon: <TrendingUp className="w-5 h-5 text-primary" />,
+    },
+    {
+      text: "Optimized automation for businesses",
+      icon: <Activity className="w-5 h-5 text-primary" />,
+    },
+    {
+      text: "Scalable solutions for future industries",
+      icon: <Rocket className="w-5 h-5 text-primary" />,
+    },
+  ];
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { staggerChildren: 0.3 } },
   };
 
   const visualizations = [
@@ -337,7 +360,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Conclusions Section */}
       <section className="py-20 bg-gradient-to-b from-accent/20 to-background">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
@@ -346,28 +368,52 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-3xl font-bold mb-8 flex items-center gap-2 text-primary">
-              <Lightbulb className="w-8 h-8" />
+            {/* Section Heading */}
+            <h2 className="text-3xl font-bold mb-8 flex items-center gap-3 text-primary">
+              <Lightbulb className="w-8 h-8 text-yellow-500" />
               Conclusions & Impact
             </h2>
 
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-primary/20 bg-background/60 backdrop-blur-sm">
-              <div className="space-y-4">
-                <p className="text-lg leading-relaxed text-primary/80">
-                  [Your conclusions and the potential impact of your findings]
-                </p>
+            {/* Main Card */}
+            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-primary/20 bg-background/60 backdrop-blur-md rounded-2xl">
+              <motion.div
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+              >
+                <motion.p
+                  className="text-lg leading-relaxed text-primary/80"
+                  variants={fadeIn}
+                >
+                  The findings of this project highlight significant
+                  advancements in [your field]. These results pave the way for
+                  innovative applications, improving efficiency and
+                  decision-making across various industries.
+                </motion.p>
 
-                <div className="pt-4 border-t border-primary/20">
-                  <h3 className="text-xl font-semibold mb-2 text-primary">
+                {/* Future Applications Section */}
+                <motion.div
+                  className="pt-6 border-t border-primary/20"
+                  variants={fadeIn}
+                >
+                  <h3 className="text-xl font-semibold mb-3 text-primary flex items-center gap-2">
+                    <ChevronRight className="w-5 h-5 text-primary" />
                     Future Applications
                   </h3>
-                  <ul className="list-disc list-inside space-y-2 text-primary/80">
-                    <li>Application point 1</li>
-                    <li>Application point 2</li>
-                    <li>Application point 3</li>
+                  <ul className="space-y-3">
+                    {futureApplications.map((app, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/10 transition duration-300 cursor-pointer"
+                        variants={fadeIn}
+                      >
+                        {app.icon}
+                        <span className="text-primary/80">{app.text}</span>
+                      </motion.li>
+                    ))}
                   </ul>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </Card>
           </motion.div>
         </div>
