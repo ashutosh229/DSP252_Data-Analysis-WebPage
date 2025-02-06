@@ -1,89 +1,111 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, LineChart, Brain, Lightbulb, Target, ArrowRight, ChartBar, TrendingUp, PieChart, Zap, TrendingDown, Users, BarChart4, LineChart as LineChart3 } from "lucide-react";
+import {
+  ChevronDown,
+  LineChart,
+  Brain,
+  Lightbulb,
+  Target,
+  ArrowRight,
+  ChartBar,
+  TrendingUp,
+  PieChart,
+  Zap,
+  TrendingDown,
+  Users,
+  BarChart4,
+  LineChart as LineChart3,
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
+import Footer from "../components/defined/Footer";
 
 export default function Home() {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const visualizations = [
     {
       title: "Time Series Analysis",
       icon: <TrendingUp className="w-6 h-6" />,
-      overview: "Analysis of temporal patterns in our dataset revealed significant trends over the past year.",
+      overview:
+        "Analysis of temporal patterns in our dataset revealed significant trends over the past year.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
       takeaways: [
         "Peak activity observed during Q2 2023",
         "15% increase in overall metrics",
-        "Seasonal patterns identified in user behavior"
-      ]
+        "Seasonal patterns identified in user behavior",
+      ],
     },
     {
       title: "Distribution Analysis",
       icon: <ChartBar className="w-6 h-6" />,
-      overview: "Statistical distribution of key metrics showing the spread and concentration of data points.",
+      overview:
+        "Statistical distribution of key metrics showing the spread and concentration of data points.",
       image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800",
       takeaways: [
         "Normal distribution observed in user metrics",
         "Significant outliers in the upper quartile",
-        "Cluster formation around mean values"
-      ]
+        "Cluster formation around mean values",
+      ],
     },
     {
       title: "Demographic Breakdown",
       icon: <PieChart className="w-6 h-6" />,
-      overview: "Segmentation analysis revealing key demographic patterns and user characteristics.",
+      overview:
+        "Segmentation analysis revealing key demographic patterns and user characteristics.",
       image: "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=800",
       takeaways: [
         "Dominant user segment identified",
         "Geographic concentration in urban areas",
-        "Age distribution peaks at 25-34 range"
-      ]
-    }
+        "Age distribution peaks at 25-34 range",
+      ],
+    },
   ];
 
   const insights = [
     {
       icon: <Zap className="w-6 h-6" />,
       title: "Performance Metrics",
-      content: "85% improvement in system efficiency after implementing optimizations",
-      color: "from-blue-500/20 to-purple-500/20"
+      content:
+        "85% improvement in system efficiency after implementing optimizations",
+      color: "from-blue-500/20 to-purple-500/20",
     },
     {
       icon: <TrendingDown className="w-6 h-6" />,
       title: "Cost Reduction",
-      content: "Identified potential for 30% cost reduction through process improvements",
-      color: "from-green-500/20 to-emerald-500/20"
+      content:
+        "Identified potential for 30% cost reduction through process improvements",
+      color: "from-green-500/20 to-emerald-500/20",
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "User Behavior",
       content: "Discovered key user segments with distinct usage patterns",
-      color: "from-orange-500/20 to-red-500/20"
+      color: "from-orange-500/20 to-red-500/20",
     },
     {
       icon: <BarChart4 className="w-6 h-6" />,
       title: "Market Analysis",
-      content: "Identified 3 major market opportunities through data correlation",
-      color: "from-pink-500/20 to-rose-500/20"
+      content:
+        "Identified 3 major market opportunities through data correlation",
+      color: "from-pink-500/20 to-rose-500/20",
     },
     {
       icon: <LineChart3 className="w-6 h-6" />,
       title: "Growth Trends",
       content: "Projected 40% growth in target metrics over next quarter",
-      color: "from-violet-500/20 to-purple-500/20"
+      color: "from-violet-500/20 to-purple-500/20",
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Strategic Focus",
       content: "Data suggests focusing on mobile platform optimization",
-      color: "from-cyan-500/20 to-blue-500/20"
-    }
+      color: "from-cyan-500/20 to-blue-500/20",
+    },
   ];
 
   return (
@@ -97,7 +119,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           />
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +127,7 @@ export default function Home() {
           >
             Data Analysis Project
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl md:text-2xl text-primary/80 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -139,7 +161,8 @@ export default function Home() {
             </h2>
             <Card className="p-6 mb-8 hover:shadow-lg transition-shadow border-primary/20 bg-background/60 backdrop-blur-sm">
               <p className="text-lg leading-relaxed text-primary/80">
-                [Your problem statement goes here. Explain what motivated you to work on this project and why it's important.]
+                [Your problem statement goes here. Explain what motivated you to
+                work on this project and why it's important.]
               </p>
             </Card>
           </motion.div>
@@ -159,7 +182,7 @@ export default function Home() {
               <LineChart className="w-8 h-8" />
               Analysis Process
             </h2>
-            
+
             {/* Enhanced Visualization Cards */}
             <div className="space-y-12">
               {visualizations.map((viz, index) => (
@@ -178,19 +201,25 @@ export default function Home() {
                           <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
                             {viz.icon}
                           </div>
-                          <h3 className="text-2xl font-semibold text-primary">{viz.title}</h3>
+                          <h3 className="text-2xl font-semibold text-primary">
+                            {viz.title}
+                          </h3>
                         </div>
-                        
+
                         <div className="space-y-4">
                           <div>
-                            <h4 className="text-lg font-medium text-primary/90 mb-2">Overview</h4>
+                            <h4 className="text-lg font-medium text-primary/90 mb-2">
+                              Overview
+                            </h4>
                             <p className="text-primary/80 leading-relaxed">
                               {viz.overview}
                             </p>
                           </div>
-                          
+
                           <div>
-                            <h4 className="text-lg font-medium text-primary/90 mb-2">Key Takeaways</h4>
+                            <h4 className="text-lg font-medium text-primary/90 mb-2">
+                              Key Takeaways
+                            </h4>
                             <ul className="space-y-2">
                               {viz.takeaways.map((takeaway, i) => (
                                 <motion.li
@@ -212,7 +241,7 @@ export default function Home() {
                       {/* Image Side */}
                       <div className="relative overflow-hidden rounded-xl group">
                         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                        <motion.img 
+                        <motion.img
                           src={viz.image}
                           alt={viz.title}
                           className="w-full h-full object-cover rounded-xl transform group-hover:scale-110 transition-transform duration-700"
@@ -241,7 +270,7 @@ export default function Home() {
               <Brain className="w-8 h-8" />
               Key Insights
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {insights.map((insight, index) => (
                 <motion.div
@@ -252,22 +281,26 @@ export default function Home() {
                     duration: 0.5,
                     delay: index * 0.1,
                     type: "spring",
-                    stiffness: 100
+                    stiffness: 100,
                   }}
                 >
                   <Card className="group relative overflow-hidden p-6 hover:shadow-2xl transition-all duration-500 border-primary/20 bg-background/60 backdrop-blur-sm">
                     {/* Animated background gradient */}
-                    <div 
+                    <div
                       className={`absolute inset-0 bg-gradient-to-br ${insight.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
                     />
-                    
+
                     {/* Content wrapper */}
                     <div className="relative z-10">
                       {/* Icon with animated background */}
                       <motion.div
                         className="mb-4 inline-block"
                         whileHover={{ scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
                         <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors duration-300">
                           {insight.icon}
@@ -283,7 +316,7 @@ export default function Home() {
                       </div>
 
                       {/* Content with fade-in effect */}
-                      <motion.p 
+                      <motion.p
                         className="text-primary/80 leading-relaxed"
                         initial={{ opacity: 0.8 }}
                         whileHover={{ opacity: 1 }}
@@ -317,15 +350,17 @@ export default function Home() {
               <Lightbulb className="w-8 h-8" />
               Conclusions & Impact
             </h2>
-            
+
             <Card className="p-6 hover:shadow-lg transition-all duration-300 border-primary/20 bg-background/60 backdrop-blur-sm">
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed text-primary/80">
                   [Your conclusions and the potential impact of your findings]
                 </p>
-                
+
                 <div className="pt-4 border-t border-primary/20">
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Future Applications</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">
+                    Future Applications
+                  </h3>
                   <ul className="list-disc list-inside space-y-2 text-primary/80">
                     <li>Application point 1</li>
                     <li>Application point 2</li>
@@ -337,6 +372,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <Footer></Footer>
     </div>
   );
 }
