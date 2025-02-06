@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Data Analysis | Panic Attacks",
   description:
     "This is the web page which represents the data analysis done on the dataset of panic attacks in the corporate sectors",
+  icons: "/title_icon.jpg",
 };
 
 export default function RootLayout({
